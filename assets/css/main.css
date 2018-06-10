@@ -22,10 +22,10 @@ div.wrapper {
 }
 @media only screen and (max-width: 900px) {
    div.wrapper {
-      width: 800px;
+      width: 700px;
    }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
    div.wrapper {
       width: 100%;
    }

@@ -48,6 +48,7 @@ div.topbar div.bottomarea ul.right {
    float: right;
    padding: 10px;
    overflow: auto;
+   padding-right: 5px;
 }
 div.topbar div.bottomarea ul.right input {
    height: 28px;
@@ -92,12 +93,7 @@ div.topbar div.bottomarea ul li:hover {
 }
 
 @media only screen and (max-width: 460px) {
-   div.wrapper div.topbar div.toparea h1 {
-      font-size: 30px;
-   }
-}
-@media only screen and (max-width: 393px) {
-   div.wrapper div.topbar div.toparea h1 {
+   div.wrapper div.topbar div.toparea ul {
       display: none;
    }
 }
@@ -112,6 +108,20 @@ div.topbar div.bottomarea ul li:hover {
    }
    div.topbar div.bottomarea ul li,div.topbar div.bottomarea ul.right input {
       display: block;
-      transition: none;
+   }
+   div.topbar div.bottomarea ul.right {
+      height: 48px;
+   }
+   div.topbar div.bottomarea ul.right input:focus {
+      width: calc(100% - 10px);
+   }
+}
+@media only screen and (max-width: 700px) {
+   div.topbar div.bottomarea ul.right input {
+      position: absolute;
+      right: 5px;
+      background-color: black;
+      padding-left: 42.5px;
+      background-position: 10px 5px;
    }
 }
