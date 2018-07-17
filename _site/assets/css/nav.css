@@ -1,0 +1,105 @@
+nav {
+  position: fixed;
+  height: 6.5rem;
+  border-bottom: 1px solid #D1D1D1;
+  width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+nav div.logo, nav div.links {
+  display: block;
+}
+nav div.logo {
+  float: left;
+}
+nav div.logo img {
+  height: 4rem;
+  width: auto;
+  float: left;
+}
+nav div.logo h1 {
+  font-size: 2.5rem;
+  float: left;
+  line-height: 4rem;
+  padding-left: 1rem;
+}
+nav div.links {
+  float: right;
+}
+nav div.links a {
+  font-size: 1.75rem;
+  float: left;
+  line-height: 4rem;
+  margin: 0 1rem;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: -.06rem;
+  text-decoration: none;
+  display: inline-block;
+}
+nav div.links a:hover{
+  color: var(--color-red);
+}
+nav div.links input {
+  margin-left: 1rem;
+  width: 20rem;
+  transition: width 0.5s;
+  border-radius: 0;
+  height: 4rem;
+}
+nav div.links input:focus {
+  border-color: var(--color-red);
+  width: 40rem;
+}
+nav div.links div.searchResults {
+  display: none;
+  overflow: auto;
+  border: 1px solid var(--color-red);
+  border-top: none;
+  width: 40rem;
+  position: fixed;
+  top: 5.25rem;
+  right: 1.25rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+nav div.links div.searchResults a.result,div.links div.searchResults h2.no_results_notice {
+  display: block;
+  height: 4rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0;
+  cursor: pointer;
+}
+nav div.links div.searchResults a.result:hover{
+  background-color: #E8E8E8;
+}
+nav div.links div.searchResults a.result h1 {
+  font-size: 1.5rem;
+  letter-spacing: -0.025rem;
+  color: #222;
+  line-height: 3rem;
+  margin: 0;
+  padding-left: 0.5rem;
+  float: left;
+}
+nav div.links div.searchResults a.result img {
+  float: right;
+  height: 2.25rem;
+  width: 2.25rem;
+  margin: 0.25rem;
+}
+div.links div.searchResults h2.no_results_notice {
+  line-height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: -0.025rem;
+}
+nav div.links input:focus:not(:placeholder-shown) ~ div.searchResults {
+  display: block;
+}
