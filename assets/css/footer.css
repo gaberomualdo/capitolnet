@@ -1,0 +1,60 @@
+footer {
+  padding: 2.5rem;
+  background-color: #222;
+}
+footer div.row {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+footer div.row div.logo, footer div.row div.socialLinks {
+  display: block;
+}
+footer div.row div.logo {
+  float: left;
+  height: 4rem;
+  opacity: 0.35;
+  transition: opacity 0.25s;
+}
+footer div.row div.logo:hover {
+  opacity: 1;
+}
+footer div.row div.logo img {
+  height: 4rem;
+  width: auto;
+  float: left;
+}
+footer div.row div.logo h1 {
+  font-size: 2.5rem;
+  float: left;
+  line-height: 4rem;
+  padding-left: 1rem;
+  webkit-font-smoothing: subpixel-antialiased;
+}
+footer div.row div.logo h1, footer div.row div.logo h1 span {
+  color: white !important;
+}
+footer div.row div.socialLinks {
+  float: right;
+  font-size: 0;
+}
+footer div.row div.socialLinks a {
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  height: 4rem;
+  width: 4rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+footer div.row div.socialLinks a svg {
+  width: 3rem;
+  height: 3rem;
+}
+footer div.row div.socialLinks a svg path {
+  fill: rgba(255,255,255,0.25);
+  transition: fill 0.25s;
+}
+footer div.row div.socialLinks a:hover svg path {
+  fill: #fff;
+}

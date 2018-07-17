@@ -1,7 +1,7 @@
 <footer>
   <div class="row">
     <div class="logo">
-      {% include logo.html %}
+      <a href="{{ site.baseurl }}/">{% include logo.html %}</a>
     </div>
     <div class="socialLinks">
       <!-- Twitter -->
@@ -12,7 +12,5 @@
       <a href="{{ site.footer_link_email }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg></a>
     </div>
   </div>
-  <div class="row">
-    <h3>&copy; {{ site.title }} <script>(function(){d=new Date();document.write(d.getFullYear());})();</script></h3>
-  </div>
+  <script>document.querySelector("footer div.row img").setAttribute("src","{{ site.baseurl }}/assets/img/main_logo_white.png");</script>
 </footer>
