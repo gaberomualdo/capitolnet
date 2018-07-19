@@ -1,12 +1,17 @@
+<script src="{{ site.baseurl }}/assets/js/vendor/jquery.min.js"></script>
 <script>
-
 var search_list = [
   {% for post in site.posts %}
 
-  "{{ post.title }}",
+  {
+    title: "{{ post.title }}",
+    type: "news",
+    link: "{{ site.baseurl }}{{ post.url }}"
+  },
 
   {% endfor %}
   ""
 ];
 search_list.pop();
 </script>
+<script src="{{ site.baseurl }}/assets/js/search.js"></script>
