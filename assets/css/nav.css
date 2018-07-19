@@ -51,7 +51,7 @@ nav div.links input {
   border-radius: 0;
   height: 4rem;
 }
-nav div.links input.focused {
+nav div.links input.focused, nav div.links input:focus {
   border-color: var(--color-red);
   width: 40rem;
 }
