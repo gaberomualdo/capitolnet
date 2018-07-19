@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/nav.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/footer.css">
+  {% if page.layout == "newsarticle" %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pages/newsarticle.css">
+  {% else %}
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pages/{{ page.css }}">
-
+  {% endif %}
   <link rel="icon" href="{{ site.baseurl }}/assets/img/main_logo.png">
 </head>

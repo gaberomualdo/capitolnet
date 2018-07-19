@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+}
+img.main_post_image {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+}
+div.post_container {
+  margin-top: -15vw;
+  background-color: white;
+  width: 800px;
+  box-shadow: 0 0 5vh rgba(0,0,0,0.5);
+  display: inline-block;
+  text-align: left;
+  padding: 5rem;
+  box-sizing: border-box;
+  margin-bottom: 10rem;
+}
+div.post_container div.top_meta_section {
+  margin-bottom: 3rem;
+}
+div.post_container div.top_meta_section h1 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+div.post_container div.top_meta_section div.row span {
+  height: 4rem;
+}
+div.post_container div.top_meta_section div.row span {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  vertical-align: text-top;
+  margin-right: 2rem;
+}
+div.post_container div.top_meta_section div.row span p {
+  display: block;
+  float: left;
+}
+div.post_container div.top_meta_section div.row span img {
+  border-radius: 50%;
+}
+div.post_container div.top_meta_section div.row span img, div.post_container div.top_meta_section div.row span svg {
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem 1rem;
+  margin-left: 0;
+  display: block;
+  float: left;
+}
+div.post_container div.top_meta_section div.row span svg {
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem;
+  margin-left: 0;
+}
