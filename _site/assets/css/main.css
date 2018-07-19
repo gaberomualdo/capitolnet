@@ -13,7 +13,7 @@
   body {
     background-image: url(../img/screen_too_small_image.png);
     background-size: contain;
-    background-color: var(--color-red);
+    background-color: #b00;
     height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@
 div.box_list_item {
   display: inline-block;
   width: 32.5rem;
-  box-shadow: 0 0 1.5rem rgba(40,40,50,.15);
+  box-shadow: 0 0 1.5rem rgba(40,40,50,.25);
   margin: 1.5rem;
   white-space: normal;
   overflow: auto;

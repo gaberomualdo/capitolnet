@@ -11,7 +11,7 @@ div.post_container {
   margin-top: -15vw;
   background-color: white;
   width: 800px;
-  box-shadow: 0 0 5vh rgba(0,0,0,0.5);
+  box-shadow: 0 0 3rem rgba(40,40,50,.25);
   display: inline-block;
   text-align: left;
   padding: 5rem;
