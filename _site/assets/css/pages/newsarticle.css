@@ -57,3 +57,6 @@ div.post_container div.top_meta_section div.row span svg {
   margin: 1rem;
   margin-left: 0;
 }
+div.post_container div.post_content > *:last-child {
+  margin-bottom: 0;
+}
