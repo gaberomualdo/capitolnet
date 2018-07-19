@@ -3,6 +3,7 @@ layout: newsarticle
 title: "Introducing Capitol Net"
 image: "2018-07-18-introducing-capitolnet.jpg"
 date: 2018-07-18
+author: Capitol Net
 ---
 
 

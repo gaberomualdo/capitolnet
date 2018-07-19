@@ -1,0 +1,12 @@
+<script>
+
+var search_list = [
+  {% for post in site.posts %}
+
+  "{{ post.title }}",
+
+  {% endfor %}
+  ""
+];
+search_list.pop();
+</script>
