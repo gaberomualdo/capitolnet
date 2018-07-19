@@ -2,7 +2,7 @@
 @import url(//fonts.googleapis.com/css?family=Droid+Serif:400,700);
 
 :root {
-  --color-red: #b00;
+  --color-red: #cc0c2f;
   --color-blue: #00c;
 }
 
@@ -13,10 +13,87 @@
   body {
     background-image: url(../img/screen_too_small_image.png);
     background-size: contain;
-    background-color: #bb0000;
+    background-color: var(--color-red);
     height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
   }
+}
+
+div.box_list_item {
+  display: inline-block;
+  width: 32.5rem;
+  box-shadow: 0 0 1.5rem rgba(40,40,50,.15);
+  margin: 1.5rem;
+  white-space: normal;
+  overflow: auto;
+  position: relative;
+}
+div.box_list_item a.top_image {
+  display: block;
+  height: 22rem;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.box_list_item div.row h1 {
+  font-size: 2.25rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+div.box_list_item div.row h1 a {
+  color: #222;
+  text-decoration: none;
+}
+div.box_list_item div.row h1 a:hover {
+  color: var(--color-red);
+}
+div.box_list_item div.row p {
+  font-size: 1.3rem;
+  overflow: scroll;
+}
+div.box_list_item div.bottom_section {
+  padding: 2rem;
+  height: 22rem;
+}
+div.box_list_item div.row.post_meta {
+  position: absolute;
+  bottom: 2rem;
+}
+div.box_list_item div.row span {
+  height: 4rem;
+}
+div.box_list_item div.row span {
+  display: block;
+  float: left;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  vertical-align: text-top;
+  margin-right: 2rem;
+}
+div.box_list_item div.row span img {
+  border-radius: 50%;
+}
+div.box_list_item div.row span img, div.box_list_item div.row span svg {
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem 1rem;
+  margin-left: 0;
+  display: block;
+  float: left;
+}
+div.box_list_item div.row span svg {
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem;
+  margin-left: 0;
+}
+div.box_list_item div.row svg {
+  display: block;
+  float: right;
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem;
 }

@@ -9,6 +9,7 @@ nav {
   padding: 1.25rem;
   box-sizing: border-box;
   background-color: #fff;
+  z-index: 9999;
 }
 nav div.logo, nav div.links {
   display: block;

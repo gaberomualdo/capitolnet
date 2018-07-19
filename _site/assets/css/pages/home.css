@@ -1,0 +1,21 @@
+section {
+  display: inline-block;
+  padding: 5rem 12.5rem;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+section hr {
+  margin: 1.5rem 0;
+}
+
+div.horizontal_scroll_list {
+  white-space: nowrap;
+  overflow-x: scroll;
+  padding: 0 .5rem;
+}
