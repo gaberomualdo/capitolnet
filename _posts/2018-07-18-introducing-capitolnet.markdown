@@ -14,6 +14,6 @@ featured_description: Your new hub for news and information about the inner work
 
 Go to Capitol Net to discover the latest insider news stories, everything from the House Finance Committee to the shocking primary losses of veteran congressional leaders.
 
-Available too are files on each major member of congress and insider on Capitol Hill. Read their biographies, voting records, or visit their website using convenient links on Capitol Net.
+Available too are files on each major member of congress and insider on Capitol Hill. Read their biographies, or visit their website using convenient links on Capitol Net.
 
 Read the newest bills and resolutions on the floor of the House and Senate, as well as the latest executive orders, straight from the White House.
