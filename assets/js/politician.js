@@ -111,6 +111,7 @@ function _politicians_checkRequestsCompleted() {
     $("div.bio_container img").attr("src",politicianInfo.image);
     $("div.bio_container div.bio_info h1").text(politicianInfo.name);
     updatePoliticianBio("Gender",politicianInfo.gender);
+    updatePoliticianBio("Age",politicianInfo.age);
     updatePoliticianBio("Title",politicianInfo.type);
     if(politicianInfo.state){
       updatePoliticianBio("State",politicianInfo.state);
