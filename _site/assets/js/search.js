@@ -78,6 +78,40 @@ function _search_checkRequestsCompleted() {
         type: item.terms[item.terms.length - 1].party.toLowerCase(),
         link: site_baseurl + "/politician.html?p=" + index
       });
+      if(_politicians_featuredPoliticians.indexOf(index) > -1){
+        const possibleGenders = [["M","F"],["Male","Female"]];
+        const possibleTypes = [["sen","rep","prez","viceprez"],["Senator","Congress","President","Vice President"]];
+        const possibleStates = [
+          ["Arizona", "Alabama", "Alaska", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming","American Samoa","Guam","Marshall Islands","Micronesia","Northern Marianas","Palau","Puerto Rico","Virgin Islands"],
+          ["AZ", "AL", "AK", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY","AS","GU","MH","FM","MP","PW","PR","VI"]
+        ];
+        let politicianInfo = {
+          name: item.name.first + " " + item.name.last,
+          gender: possibleGenders[1][possibleGenders[0].indexOf(item.bio.gender)],
+          type: possibleTypes[1][possibleTypes[0].indexOf(item.terms[item.terms.length - 1].type)],
+          state: possibleStates[0][possibleStates[1].indexOf(item.terms[item.terms.length - 1].state)],
+          party: item.terms[item.terms.length - 1].party,
+          image: "https://theunitedstates.io/images/congress/225x275/" + item.id.bioguide +  ".jpg",
+          link: site_baseurl + "/politician.html?p=" + index
+        }
+        if(politicianInfo.type == "Congress"){
+          if(politicianInfo.gender == "Male"){
+            politicianInfo.type = "Congressman";
+          }else{
+            politicianInfo.type = "Congresswoman"
+          }
+        }
+        if(politicianInfo.name == "Donald Trump"){
+          politicianInfo.image = "https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg";
+        }
+
+        let stateHTML = "";
+        if(politicianInfo.state){
+          stateHTML = "<span><strong>State:</strong> " + politicianInfo.state + "</span>";
+        }
+        const placeholderImageURL = site_baseurl + "/assets/img/placeholder_person.png";
+        $("section.politicians div.horizontal_scroll_list").append('<div class="box_list_item"><a class="top_image" href="' + politicianInfo.link + '" style="background-image: url(\'' + politicianInfo.image + '\'), url(\'' + placeholderImageURL + '\')"></a><div class="bottom_section"><div class="row"><h1><a href="' + politicianInfo.link + '">' + politicianInfo.name + '</a></h1><p><span><strong>Gender:</strong> ' + politicianInfo.gender + '</span><span><strong>Title:</strong> ' + politicianInfo.type + '</span>' + stateHTML + '<span><strong>Party:</strong> ' + politicianInfo.party + '</span></p></div></div></div>');
+      }
     });
   }
 }

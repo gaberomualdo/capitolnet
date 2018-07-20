@@ -20,6 +20,21 @@ div.horizontal_scroll_list {
   padding: 0 .5rem;
 }
 
+section.politicians div.horizontal_scroll_list div.box_list_item a.top_image {
+  height: 35rem;
+}
+section.politicians div.horizontal_scroll_list div.box_list_item a.top_image {
+  height: 35rem;
+  background-color: #efefef;
+  background-size: cover, 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section.politicians div.horizontal_scroll_list div.box_list_item div.row span {
+  display: block;
+  float: none;
+}
+
 div.featured_slideshow {
   height: calc(100vh - 6.5rem);
   white-space: nowrap;
