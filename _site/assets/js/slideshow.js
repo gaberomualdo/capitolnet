@@ -20,7 +20,7 @@ function _slideshow_slideshowEvaluateDisabledButtons(){
     $("div.featured_slideshow svg.featured_slideshow_back_button").removeClass("disabled");
   }
 
-  if($('div.featured_slideshow').scrollLeft() - $(window).width() == 0){
+  if($('div.featured_slideshow')[0].scrollWidth - ($('div.featured_slideshow').scrollLeft() + $(window).width()) == 0){
     $("div.featured_slideshow svg.featured_slideshow_forward_button").addClass("disabled");
   }else{
     $("div.featured_slideshow svg.featured_slideshow_forward_button").removeClass("disabled");

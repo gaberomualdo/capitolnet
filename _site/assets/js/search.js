@@ -1,7 +1,6 @@
 $("nav div.links input.search").on("input",_search_searchInputShowResults);
 $("nav div.links input.search").on("focus",_search_checkShowSearchResultsBox);
 $("nav div.links input.search").on("blur",_search_checkShowSearchResultsBox);
-$(_search_searchInputShowResults);
 function _search_searchInputShowResults(){
   const search_query = $("nav div.links input.search").val();
   $("nav div.links div.searchResults").html("");
