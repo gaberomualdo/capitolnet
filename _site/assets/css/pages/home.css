@@ -97,12 +97,17 @@ div.featured_slideshow svg.slideshow_button {
   transition: background-color 0.25s;
   display: block;
   margin: 0;
-  fill: white;
+  fill: #fff;
   cursor: pointer;
 }
 div.featured_slideshow svg.slideshow_button.disabled {
-  fill: rgba(255,255,255,0.35);
   cursor: default;
+}
+div.featured_slideshow svg.slideshow_button path {
+  transition: fill 0.25s;
+}
+div.featured_slideshow svg.slideshow_button.disabled path {
+  fill: rgba(255,255,255,0.25);
 }
 div.featured_slideshow svg.slideshow_button:not(.disabled):hover {
   background-color: rgba(0,0,0,0.25);
