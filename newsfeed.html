@@ -4,6 +4,16 @@ title: News
 css: newsfeed.css
 ---
 
+<script>
+
+(function(){
+  const remSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  let returnHTML = "<style>@media (max-width: " + (110*remSize) + "px){ div.main_content{ width: 75rem } } @media (max-width: " + (74*remSize) + "px){ div.main_content{ width: 36.5rem } }</style>";
+  document.write(returnHTML);
+})();
+
+</script>
+
 <div class="main_content">
   <h1>Latest News</h1>
   <hr>
