@@ -39,8 +39,6 @@ function _politicians_checkRequestsCompleted() {
   if(_politicians_requestsCompleted[0] && _politicians_requestsCompleted[1]){
     _politicians_allPoliticians = _politicians_executivePoliticians.concat(_politicians_legislatorsPoliticians);
 
-    console.log(_politicians_allPoliticians);
-
     const possibleGenders = [["M","F"],["Male","Female"]];
     const possibleTypes = [["sen","rep","prez","viceprez"],["Senator","Congress","President","Vice President"]];
     const possibleStates = [
@@ -54,23 +52,25 @@ function _politicians_checkRequestsCompleted() {
         type: possibleTypes[1][possibleTypes[0].indexOf(item.terms[item.terms.length - 1].type)],
         state: possibleStates[0][possibleStates[1].indexOf(item.terms[item.terms.length - 1].state)],
         party: item.terms[item.terms.length - 1].party,
-        image: "https://theunitedstates.io/images/congress/225x275/" + item.id.bioguide +  ".jpg"
+        image: "https://theunitedstates.io/images/congress/225x275/" + item.id.bioguide +  ".jpg",
+        link: site_baseurl + "/politician.html?p=" + index
+      }
+      if(politicianInfo.type == "Congress"){
+        if(politicianInfo.gender == "Male"){
+          politicianInfo.type = "Congressman";
+        }else{
+          politicianInfo.type = "Congresswoman"
+        }
       }
       if(politicianInfo.name == "Donald Trump"){
         politicianInfo.image = "https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg";
       }
 
+      let stateHTML = "";
       if(politicianInfo.state){
-        $("div.main_content div.politicians_item_list").append('<div class="box_list_item"><a class="top_image" style="background-image: url(\'' + politicianInfo.image + '\')"></a><div class="bottom_section"><div class="row"><h1><a href="">' + politicianInfo.name + '</a></h1><p><span><strong>Gender:</strong> ' + politicianInfo.gender + '</span><span><strong>Title:</strong> ' + politicianInfo.type + '</span><span><strong>State:</strong> ' + politicianInfo.state + '</span><span><strong>Party:</strong> ' + politicianInfo.party + '</span></p></div></div></div>');
-      }else{
-        $("div.main_content div.politicians_item_list").append('<div class="box_list_item"><a class="top_image" style="background-image: url(\'' + politicianInfo.image + '\')"></a><div class="bottom_section"><div class="row"><h1><a href="">' + politicianInfo.name + '</a></h1><p><span><strong>Gender:</strong> ' + politicianInfo.gender + '</span><span><strong>Title:</strong> ' + politicianInfo.type + '</span><span><strong>Party:</strong> ' + politicianInfo.party + '</span></p></div></div></div>');
+        stateHTML = "<span><strong>State:</strong> " + politicianInfo.state + "</span>";
       }
-
-      search_list.push({
-        title: politicianInfo.name,
-        type: politicianInfo.party.toLowerCase(),
-        link: site_baseurl + "/politician.html?p=" + index
-      })
+      $("div.main_content div.politicians_item_list").append('<div class="box_list_item"><a class="top_image" href="' + politicianInfo.link + '" style="background-image: url(\'' + politicianInfo.image + '\')"></a><div class="bottom_section"><div class="row"><h1><a href="' + politicianInfo.link + '">' + politicianInfo.name + '</a></h1><p><span><strong>Gender:</strong> ' + politicianInfo.gender + '</span><span><strong>Title:</strong> ' + politicianInfo.type + '</span>' + stateHTML + '<span><strong>Party:</strong> ' + politicianInfo.party + '</span></p></div></div></div>');
     });
   }
 }

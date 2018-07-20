@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+}
+div.bio_container {
+  background-color: white;
+  width: 900px;
+  box-shadow: 0 0 3rem rgba(40,40,50,.25);
+  display: inline-block;
+  text-align: left;
+  box-sizing: border-box;
+  margin: 10rem 0;
+  padding: 2.5rem;
+  padding-bottom: 0;
+}
+div.bio_container div.bio_info {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  padding-bottom: 2rem;
+}
+div.bio_container div.bio_info h1 {
+  font-size: 3.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+div.bio_container div.bio_info p {
+  display: block;
+  margin: 0;
+  line-height: 2.5;
+}
+div.bio_container img {
+  height: 25rem;
+  width: auto;
+  display: block;
+  float: left;
+  margin-right: 2.5rem;
+  padding-bottom: 2.5rem;
+}

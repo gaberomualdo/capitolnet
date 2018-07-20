@@ -30,3 +30,54 @@ function _search_checkShowSearchResultsBox(){
     $("nav div.links input.search").removeClass("focused");
   }
 }
+
+let _search_legislatorsPoliticians = [];
+let _search_executivePoliticians = [];
+let _search_allPoliticians = [];
+let _search_requestsCompleted = [false, false];
+
+(function(){
+  var xmlhttp = new XMLHttpRequest();
+  var url = "https://theunitedstates.io/congress-legislators/legislators-current.json";
+
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      _search_legislatorsPoliticians = JSON.parse(this.responseText);
+      _search_requestsCompleted[0] = true;
+      _search_checkRequestsCompleted();
+    }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+})();
+
+(function(){
+  var xmlhttp = new XMLHttpRequest();
+  var url = "https://theunitedstates.io/congress-legislators/executive.json";
+
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const response = JSON.parse(this.responseText);
+      _search_executivePoliticians.push(response[response.length - 1]);
+      _search_executivePoliticians.push(response[response.length - 2]);
+      _search_requestsCompleted[1] = true;
+      _search_checkRequestsCompleted();
+    }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+})();
+
+function _search_checkRequestsCompleted() {
+  if(_search_requestsCompleted[0] && _search_requestsCompleted[1]){
+    _search_allPoliticians = _search_executivePoliticians.concat(_search_legislatorsPoliticians);
+
+    _search_allPoliticians.forEach(function(item,index){
+      search_list.push({
+        title: item.name.first + " " + item.name.last,
+        type: item.terms[item.terms.length - 1].party.toLowerCase(),
+        link: site_baseurl + "/politician.html?p=" + index
+      });
+    });
+  }
+}
