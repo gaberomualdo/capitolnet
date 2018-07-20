@@ -14,6 +14,12 @@
     {% include footer.html %}
 
     {% include scripts.html %}
+    {% if page.css == "home.css" %}
+    <script src="{{ site.baseurl }}/assets/js/slideshow.js"></script>
+    {% endif %}
+    {% if page.css == "politicians.css" %}
+    <script src="{{ site.baseurl }}/assets/js/politicians.js"></script>
+    {% endif %}
   </body>
 
 </html>

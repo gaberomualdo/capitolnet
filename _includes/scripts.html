@@ -1,6 +1,7 @@
 <script src="{{ site.baseurl }}/assets/js/vendor/jquery.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/vendor/jquery.easing.min.js"></script>
 <script>
+var site_baseurl = "{{ site.baseurl }}";
 var search_list = [
   {% for post in site.posts %}
 
@@ -21,4 +22,3 @@ $(function(){
 });
 </script>
 <script src="{{ site.baseurl }}/assets/js/search.js"></script>
-<script src="{{ site.baseurl }}/assets/js/slideshow.js"></script>
