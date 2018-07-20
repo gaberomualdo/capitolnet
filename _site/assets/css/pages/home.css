@@ -19,3 +19,97 @@ div.horizontal_scroll_list {
   overflow-x: scroll;
   padding: 0 .5rem;
 }
+
+div.featured_slideshow {
+  height: calc(100vh - 6.5rem);
+  white-space: nowrap;
+  overflow: hidden;
+}
+div.featured_slideshow div.slide {
+  display: inline-block;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 0 0 1.5rem rgba(40,40,50,.25);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rem 12.5rem;
+  white-space: normal;
+  vertical-align: text-bottom;
+}
+div.featured_slideshow div.slide h1 {
+  font-size: 5.5rem;
+  margin-bottom: 1rem;
+  max-width: 80rem;
+}
+div.featured_slideshow div.slide h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+div.featured_slideshow div.slide h1 a:hover{
+  color: #E1E1E1;
+}
+div.featured_slideshow div.slide p {
+  font-size: 2rem;
+  max-width: 70rem;
+}
+div.featured_slideshow div.slide div.row span {
+  height: 4rem;
+}
+div.featured_slideshow div.slide div.row span {
+  display: block;
+  float: left;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  vertical-align: text-top;
+  margin-right: 2rem;
+}
+div.featured_slideshow div.slide div.row span img {
+  border-radius: 50%;
+}
+div.featured_slideshow div.slide div.row span img, div.featured_slideshow div.slide div.row span svg {
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem 1rem;
+  margin-left: 0;
+  display: block;
+  float: left;
+}
+div.featured_slideshow div.slide div.row span svg {
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem;
+  margin-left: 0;
+}
+div.featured_slideshow div.slide div.row span svg path {
+  fill: #fff;
+}
+div.featured_slideshow svg.slideshow_button {
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
+  position: absolute;
+  top: calc(50vh - 2.5rem);
+  box-sizing: border-box;
+  outline: none;
+  transition: background-color 0.25s;
+  display: block;
+  margin: 0;
+  fill: white;
+  cursor: pointer;
+}
+div.featured_slideshow svg.slideshow_button.disabled {
+  fill: rgba(255,255,255,0.35);
+  cursor: default;
+}
+div.featured_slideshow svg:not(.disabled):hover {
+  background-color: rgba(0,0,0,0.25);
+}
+div.featured_slideshow svg.featured_slideshow_forward_button {
+  right: 0;
+}
+div.featured_slideshow svg.featured_slideshow_back_button {
+  left: 0;
+}

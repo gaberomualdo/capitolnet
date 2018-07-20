@@ -90,10 +90,3 @@ div.box_list_item div.row span svg {
   margin: 1rem;
   margin-left: 0;
 }
-div.box_list_item div.row svg {
-  display: block;
-  float: right;
-  height: 2rem;
-  width: 2rem;
-  margin: 1rem;
-}

@@ -6,7 +6,7 @@ date: 2018-07-18
 author: Capitol Net
 
 featured: true
-featured_description: Your new hub for news and information about the inner workings of the United States Government.
+featured_description: lorem ipsum dolor sit amet
 ---
 
 
