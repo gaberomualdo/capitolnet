@@ -104,7 +104,7 @@ div.featured_slideshow svg.slideshow_button.disabled {
   fill: rgba(255,255,255,0.35);
   cursor: default;
 }
-div.featured_slideshow svg:not(.disabled):hover {
+div.featured_slideshow svg.slideshow_button:not(.disabled):hover {
   background-color: rgba(0,0,0,0.25);
 }
 div.featured_slideshow svg.featured_slideshow_forward_button {
