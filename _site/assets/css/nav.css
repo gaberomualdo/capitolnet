@@ -67,7 +67,7 @@ nav div.links div.searchResults {
   right: 1.25rem;
   box-sizing: border-box;
   background-color: #fff;
-  max-height: calc(100vh - 7.25rem);
+  max-height: calc(100vh - 6.5rem);
   overflow-y: scroll;
 }
 nav div.links div.searchResults a.result,div.links div.searchResults h2.no_results_notice {
