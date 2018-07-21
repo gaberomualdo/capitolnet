@@ -26,6 +26,12 @@
     {% if page.css == "home.css" %}
     <script src="{{ site.baseurl }}/assets/js/slideshow.js"></script>
     {% endif %}
+    {% if page.css == "committees.css" %}
+    <script>_committees_page = true;</script>
+    {% endif %}
+    {% if page.css == "committee.css" %}
+    <script>_committee_page = true;</script>
+    {% endif %}
   </body>
 
 </html>
