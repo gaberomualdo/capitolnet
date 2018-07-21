@@ -15,13 +15,16 @@
 
     {% include scripts.html %}
     {% if page.css == "home.css" %}
-    <script src="{{ site.baseurl }}/assets/js/slideshow.js"></script>
+    <script>_home_page = true;</script>
     {% endif %}
     {% if page.css == "politicians.css" %}
-    <script src="{{ site.baseurl }}/assets/js/politicians.js"></script>
+    <script>_politicians_page = true;</script>
     {% endif %}
     {% if page.css == "politician.css" %}
-    <script src="{{ site.baseurl }}/assets/js/politician.js"></script>
+    <script>_politician_page = true;</script>
+    {% endif %}
+    {% if page.css == "home.css" %}
+    <script src="{{ site.baseurl }}/assets/js/slideshow.js"></script>
     {% endif %}
   </body>
 
