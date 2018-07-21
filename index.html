@@ -41,7 +41,7 @@ css: home.css
       <a href="{{ site.baseurl }}/{{ post.url }}" class="top_image" style="background-image: url('{{ site.baseurl }}/assets/img/post_images/{{ post.image }}')"></a>
       <div class="bottom_section">
         <div class="row">
-          <h1><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h1>
+          <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
           <p>{{ post.content | strip_html | truncatewords: 25 }}</p>
         </div>
         <div class="row post_meta">
