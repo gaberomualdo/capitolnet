@@ -1,10 +1,16 @@
+@import url("box_item_list.css");
+
 section {
   display: inline-block;
-  padding: 5rem 12.5rem;
   padding-bottom: 0;
   box-sizing: border-box;
-  width: 100%;
   overflow-x: hidden;
+}
+section.main_content {
+  padding-bottom: 0;
+}
+section.main_content:last-child {
+  padding-bottom: 5rem;
 }
 section h1 {
   font-size: 3.5rem;
@@ -17,7 +23,8 @@ section hr {
 div.horizontal_scroll_list {
   white-space: nowrap;
   overflow-x: scroll;
-  padding: 0 .5rem;
+  padding: 0;
+  margin: 0 .5rem;
 }
 
 section.politicians div.horizontal_scroll_list div.box_list_item a.top_image {
@@ -39,6 +46,7 @@ div.featured_slideshow {
   height: calc(100vh - 6.5rem);
   white-space: nowrap;
   overflow: hidden;
+  text-align: left;
 }
 div.featured_slideshow div.slide {
   display: inline-block;
