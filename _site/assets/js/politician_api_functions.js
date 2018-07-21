@@ -52,6 +52,7 @@ function _politicians_requestsCompletedFunc(){
     }
 
     $("div.bio_container img").attr("src",politicianInfo.image);
+    $("div.bio_container img").attr("onerror","this.onerror = null;this.setAttribute('class','load_error')");
     $("div.bio_container div.bio_info h1").text(politicianInfo.name);
     updatePoliticianBio("Gender",politicianInfo.gender);
     updatePoliticianBio("Age",politicianInfo.age);

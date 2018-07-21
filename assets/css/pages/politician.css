@@ -16,7 +16,7 @@ div.bio_container div.bio_info {
   display: block;
   box-sizing: border-box;
   float: left;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 div.bio_container div.bio_info h1 {
   font-size: 3.5rem;
@@ -31,9 +31,17 @@ div.bio_container div.bio_info p {
 }
 div.bio_container img {
   height: 25rem;
+  background-color: #efefef;
+  background-image: url(../../img/placeholder_person.png);
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
   width: auto;
   display: block;
   float: left;
   margin-right: 2.5rem;
-  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+div.bio_container img.load_error {
+  min-width: 25rem;
 }
