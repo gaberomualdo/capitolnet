@@ -4,14 +4,8 @@ let _committees_page = false;
 function _committees_requestCompletedFunc(){
   _committees_allCommittees.forEach(function(item,index){
     const committeeInfo = (_committees_getCommitteeData(item,index));
-    let name = item.name;
-    console.log(name);
-    name = name.split(" ");
-    console.log(name);
-    name.shift();
-    name = name.join(" ");
     search_list.push({
-      title: name,
+      title: committeeInfo.name,
       type: "committee",
       link: committeeInfo.link
     });
@@ -38,6 +32,17 @@ function _committees_requestCompletedFunc(){
     });
   }
   if(_committee_page){
+    const committeeInfo = _committees_getCommitteeData(_committees_allCommittees[_committees_getQueryVariable("p")],_committees_getQueryVariable("p"));
+    function updateCommitteeBio(key,value){
+      $("div.committee_container").append("<p><strong>" + key + ": </strong><span>" + value + "</span></p>");
+    }
+
+    $("div.committee_container h1").text(committeeInfo.name);
+    if(committeeInfo.jurisdiction){
+      updateCommitteeBio("Jurisdiction","<span style='text-transform: none;'>" + committeeInfo.jurisdiction + "</span>");
+    }
+    updateCommitteeBio("Chamber",committeeInfo.chamber);
+    updateCommitteeBio("Website","<a href='" + committeeInfo.website + "'>" + committeeInfo.name + " Official Website</a>");
 
   }
 };
