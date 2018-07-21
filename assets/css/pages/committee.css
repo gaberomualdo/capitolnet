@@ -20,7 +20,6 @@ div.committee_container h1 {
 div.committee_container p {
   display: block;
   margin-bottom: 1.5rem;
-  text-transform: capitalize;
 }
 div.committee_container > *:last-child {
   margin-bottom: 0;

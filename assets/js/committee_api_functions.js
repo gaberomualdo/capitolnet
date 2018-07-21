@@ -55,14 +55,17 @@ function _committees_requestCompletedFunc(){
 
     $("div.committee_container h1").text(committeeInfo.name);
     if(committeeInfo.jurisdiction){
-      updateCommitteeBio("Jurisdiction","<span style='text-transform: none;'>" + committeeInfo.jurisdiction + "</span>");
+      updateCommitteeBio("Jurisdiction",committeeInfo.jurisdiction);
     }
-    updateCommitteeBio("Chamber",committeeInfo.chamber);
+    updateCommitteeBio("Chamber","<span style='text-transform: capitalize;'>" + committeeInfo.chamber + "</span>");
     updateCommitteeBio("Website","<a href='" + committeeInfo.website + "'>" + committeeInfo.name + " Official Website</a>");
     (function(){
       let subcommitteesHTML = "";
       committeeInfo.subcommittees.forEach(function(item,index){
-        subcommitteesHTML += "<a href='" + item.url + "'>" + item.name + "</a>,&nbsp;";
+        subcommitteesHTML += "<a href='" + item.url + "'>" + item.name + "</a>";
+        if(index != committeeInfo.subcommittees.length - 1){
+          subcommitteesHTML += ",&nbsp;";
+        }
       });
       updateCommitteeBio("Subcommittees",subcommitteesHTML);
     })();
