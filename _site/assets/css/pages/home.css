@@ -27,19 +27,22 @@ div.horizontal_scroll_list {
   margin: 0 .5rem;
 }
 /* width */
-div.horizontal_scroll_list::-webkit-scrollbar {
+div.horizontal_scroll_list:not(.noscroll)::-webkit-scrollbar {
     height: 5px;
 }
-div.horizontal_scroll_list::-webkit-scrollbar-track {
+div.horizontal_scroll_list:not(.noscroll)::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-div.horizontal_scroll_list::-webkit-scrollbar-thumb {
+div.horizontal_scroll_list:not(.noscroll)::-webkit-scrollbar-thumb {
     background: #d1d1d1;
 }
-div.horizontal_scroll_list::-webkit-scrollbar-thumb:hover {
+div.horizontal_scroll_list:not(.noscroll)::-webkit-scrollbar-thumb:hover {
     background: #888;
 }
-div.horizontal_scroll_list::-webkit-scrollbar-thumb:active {
+div.horizontal_scroll_list:not(.noscroll)::-webkit-scrollbar-thumb:active {
+    background: #666;
+}
+div.horizontal_scroll_list:not(.noscroll)::-webkit-scrollbar-thumb:active {
     background: #666;
 }
 

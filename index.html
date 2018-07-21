@@ -34,7 +34,7 @@ css: home.css
 <section class="latest_news main_content">
   <h1>Latest News</h1>
   <hr>
-  <div class="horizontal_scroll_list box_item_list">
+  <div class="horizontal_scroll_list box_item_list {% if site.posts.size <= 3 %}noscroll{% endif %}">
     {% for post in site.posts %}
 
     <div class="box_list_item">
