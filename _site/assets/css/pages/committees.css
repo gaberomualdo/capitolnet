@@ -12,3 +12,14 @@ div.box_list_item a.top_image {
 div.box_list_item div.bottom_section {
   height: 25rem;
 }
+div.box_item_list {
+  overflow: auto;
+  margin-bottom: 5rem;
+}
+div.main_content {
+  padding-bottom: 0;
+}
+div.main_content h1 {
+  display: block;
+  clear: both;
+}

@@ -44,7 +44,14 @@ function _committees_requestCompletedFunc(){
           committeeInfoJursdiction = committeeInfoJursdiction.join(" ");
         }
       }
-      $("div.main_content div.box_item_list").append('<div class="box_list_item"><div class="bottom_section"><div class="row"><h1><a href="' + committeeInfo.link + '">' + committeeInfo.name + '</a></h1><p>' + committeeInfoJursdiction + '</p></div></div></div>');
+      const addHTML = '<div class="box_list_item"><div class="bottom_section"><div class="row"><h1><a href="' + committeeInfo.link + '">' + committeeInfo.name + '</a></h1><p>' + committeeInfoJursdiction + '</p></div></div></div>';
+      if(committeeInfo.chamber == "senate"){
+        $("div.main_content div.box_item_list.senate").append(addHTML);
+      }else if(committeeInfo.chamber == "house"){
+        $("div.main_content div.box_item_list.house").append(addHTML);
+      }else{
+        $("div.main_content div.box_item_list.joint").append(addHTML);
+      }
     });
   }
   if(_committee_page){
