@@ -11,7 +11,23 @@ function _committees_requestCompletedFunc(){
     });
   });
   if(_home_page){
-
+    _committees_featuredCommittees.forEach(function(index,ind){
+      let item = _committees_allCommittees[index];
+      const committeeInfo = _committees_getCommitteeData(item,index);
+      let committeeInfoJursdiction = "No description available.";
+      if(committeeInfo.jurisdiction){
+        committeeInfoJursdiction = committeeInfo.jurisdiction;
+        committeeInfoJursdiction = committeeInfoJursdiction.split(" ");
+        if(committeeInfoJursdiction.length > 40){
+          committeeInfoJursdiction = committeeInfoJursdiction.slice(0,40);
+          committeeInfoJursdiction = committeeInfoJursdiction.join(" ");
+          committeeInfoJursdiction += "...";
+        }else{
+          committeeInfoJursdiction = committeeInfoJursdiction.join(" ");
+        }
+      }
+      $("section.committees div.horizontal_scroll_list").append('<div class="box_list_item"><div class="bottom_section"><div class="row"><h1><a href="' + committeeInfo.link + '">' + committeeInfo.name + '</a></h1><p>' + committeeInfoJursdiction + '</p></div></div></div>');
+    });
   }
   if(_committees_page){
     _committees_allCommittees.forEach(function(item,index){

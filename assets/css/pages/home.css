@@ -37,6 +37,9 @@ section.politicians div.horizontal_scroll_list div.box_list_item a.top_image {
   background-position: center;
   background-repeat: no-repeat;
 }
+section.committees div.horizontal_scroll_list div.box_list_item div.bottom_section {
+  height: 25rem;
+}
 section.politicians div.horizontal_scroll_list div.box_list_item div.row span {
   display: block;
   float: none;
