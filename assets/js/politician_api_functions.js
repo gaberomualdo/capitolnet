@@ -5,11 +5,22 @@ let _politician_page = false;
 function _politicians_requestsCompletedFunc(){
   _politicians_allPoliticians.forEach(function(item,index){
     const politicianInfo = _politicians_getPoliticianData(item,index);
-    search_list.push({
-      title: politicianInfo.name,
-      type: politicianInfo.party.toLowerCase(),
-      link: site_baseurl + "/politician.html?p=" + index
-    });
+    if(politicianInfo.state){
+      search_list.push({
+        title: politicianInfo.name,
+        type: "politician",
+        party: politicianInfo.party.toLowerCase(),
+        state: item.terms[item.terms.length - 1].state,
+        link: site_baseurl + "/politician.html?p=" + index
+      });
+    }else{
+      search_list.push({
+        title: politicianInfo.name,
+        type: "whitehouse_politician",
+        party: politicianInfo.party.toLowerCase(),
+        link: site_baseurl + "/politician.html?p=" + index
+      });
+    }
   });
   if(_home_page){
     _politicians_featuredPoliticians.forEach(function(index,ind){

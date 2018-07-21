@@ -91,11 +91,29 @@ nav div.links div.searchResults a.result h1 {
   padding-left: 0.5rem;
   float: left;
 }
-nav div.links div.searchResults a.result img, nav div.links div.searchResults a.result svg {
+nav div.links div.searchResults a.result img, nav div.links div.searchResults a.result span, nav div.links div.searchResults a.result svg {
   float: right;
   height: 2.25rem;
   width: 2.25rem;
   margin: 0.375rem;
+  font-size: 2rem;
+  color: #222;
+}
+nav div.links div.searchResults a.result svg.republican {
+  fill: var(--color-red);
+}
+nav div.links div.searchResults a.result svg.democrat {
+  fill: var(--color-blue);
+}
+nav div.links div.searchResults a.result span {
+  line-height: 2.25rem;
+  width: auto;
+}
+nav div.links div.searchResults a.result span.republican {
+  color: var(--color-red);
+}
+nav div.links div.searchResults a.result span.democrat {
+  color: var(--color-blue);
 }
 div.links div.searchResults h2.no_results_notice {
   line-height: 3rem;
