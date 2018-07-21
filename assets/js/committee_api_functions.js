@@ -59,6 +59,12 @@ function _committees_requestCompletedFunc(){
     }
     updateCommitteeBio("Chamber",committeeInfo.chamber);
     updateCommitteeBio("Website","<a href='" + committeeInfo.website + "'>" + committeeInfo.name + " Official Website</a>");
-
+    (function(){
+      let subcommitteesHTML = "";
+      committeeInfo.subcommittees.forEach(function(item,index){
+        subcommitteesHTML += "<a href='" + item.url + "'>" + item.name + "</a>,&nbsp;";
+      });
+      updateCommitteeBio("Subcommittees",subcommitteesHTML);
+    })();
   }
 };

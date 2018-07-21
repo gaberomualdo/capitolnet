@@ -34,7 +34,8 @@ function _committees_getCommitteeData(item,index){
     chamber: item.type,
     jurisdiction: item.jurisdiction,
     website: item.url,
-    link: site_baseurl + "/committee.html?p=" + index
+    link: site_baseurl + "/committee.html?p=" + index,
+    subcommittees: item.subcommittees
   }
   if(committeeInfo.name.split(" on ").length > 1){
     committeeInfo.name = committeeInfo.name.split(" on ")[1];
