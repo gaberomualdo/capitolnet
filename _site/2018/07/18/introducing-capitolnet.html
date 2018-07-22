@@ -108,6 +108,18 @@
     <script src="/capitolnet/assets/js/vendor/jquery.min.js"></script>
 <script src="/capitolnet/assets/js/vendor/jquery.easing.min.js"></script>
 <script>
+function getQueryVariable(variable){
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){
+      return pair[1];
+    }
+  }
+  return(false);
+}
+
 var site_baseurl = "/capitolnet";
 var search_list = [
   
@@ -128,14 +140,14 @@ $(function(){
   _slideshow_slideshowEvaluateDisabledButtons();
 });
 
-$(".main_content h1").on("click",function(){
-  $("div.box_item_list." + $(this).attr("class")).slideToggle(500,"easeInOutExpo");
-  if($(this).attr("style")){
-    $(this).removeAttr("style");
+function _updateMainContentPageDropdowns(h1){
+  $("div.box_item_list." + $(h1).attr("class")).slideToggle(500,"easeInOutExpo");
+  if($(h1).attr("style")){
+    $(h1).removeAttr("style");
   }else{
-    $(this).attr("style","background-image: url(assets/img/up_icon.png);");
+    $(h1).attr("style","background-image: url(assets/img/up_icon.png);");
   }
-});
+}
 
 var _politicians_featuredPoliticians = [0,253,469,87,35,238,207,261,158,223,21];
 var _committees_featuredCommittees = [6,9,16,18,29,35];

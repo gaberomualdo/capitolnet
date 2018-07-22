@@ -55,7 +55,7 @@ function _committees_requestCompletedFunc(){
     });
   }
   if(_committee_page){
-    const committeeInfo = _committees_getCommitteeData(_committees_allCommittees[_committees_getQueryVariable("p")],_committees_getQueryVariable("p"));
+    const committeeInfo = _committees_getCommitteeData(_committees_allCommittees[getQueryVariable("p")],getQueryVariable("p"));
     function updateCommitteeBio(key,value){
       $("div.committee_container").append("<p><strong>" + key + ": </strong><span>" + value + "</span></p>");
     }

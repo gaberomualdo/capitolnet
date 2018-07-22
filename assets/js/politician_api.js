@@ -1,19 +1,11 @@
-function _politicians_getQueryVariable(variable){
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-    if(pair[0] == variable){
-      return pair[1];
-    }
-  }
-  return(false);
-}
-
-_politicians_legislatorsPoliticians = [];
-_politicians_executivePoliticians = [];
-_politicians_allPoliticians = [];
-_politicians_requestsCompleted = [false, false];
+let _politicians_legislatorsPoliticians = [];
+let _politicians_executivePoliticians = [];
+let _politicians_allPoliticians = [];
+let _politicians_requestsCompleted = [false, false];
+const _politicians_possibleStates = [
+  ["Arizona", "Alabama", "Alaska", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming","American Samoa","Guam","Northern Marianas","Puerto Rico","Virgin Islands","Washington D.C."],
+  ["AZ", "AL", "AK", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY","AS","GU","MP","PR","VI","DC"]
+];
 
 (function(){
   var xmlhttp = new XMLHttpRequest();
@@ -58,10 +50,7 @@ function _politicians_checkRequestsCompleted() {
 function _politicians_getPoliticianData(item,index){
   const possibleGenders = [["M","F"],["Male","Female"]];
   const possibleTypes = [["sen","rep","prez","viceprez"],["Senator","Congress","President","Vice President"]];
-  const possibleStates = [
-    ["Arizona", "Alabama", "Alaska", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming","American Samoa","Guam","Marshall Islands","Micronesia","Northern Marianas","Palau","Puerto Rico","Virgin Islands"],
-    ["AZ", "AL", "AK", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY","AS","GU","MH","FM","MP","PW","PR","VI"]
-  ];
+  const possibleStates = _politicians_possibleStates;
   let politicianInfo = {
     name: item.name.first + " " + item.name.last,
     gender: possibleGenders[1][possibleGenders[0].indexOf(item.bio.gender)],
