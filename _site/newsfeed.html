@@ -147,15 +147,43 @@ $(function(){
   if(_politicians_page){
     switch(getQueryVariable("s")){
       case "state":
+        $(".search_section input").attr("placeholder","Search States...");
         $(".sort_select option.state").attr("selected","true");
         break;
       case "party":
+        $(".search_section input").attr("placeholder","Search Parties...");
         $(".sort_select option.party").attr("selected","true");
         break;
       case "type":
+        $(".search_section input").attr("placeholder","Search Chambers...");
+        $(".sort_select option.chamber").attr("selected","true");
+        break;
+      default:
+        $(".search_section input").attr("placeholder","Search Chambers...");
         $(".sort_select option.chamber").attr("selected","true");
     }
     $('.sort_select').awselect();
+
+    $(".search_section input").on("input",function(){
+      const searchQuery = $(this).val().toLowerCase();
+      $("div.main_content span.area").each(function(index){
+        let searchValue = $(this).attr("class").split(" ")[1].toLowerCase();
+        if(getQueryVariable("s") == "state" && searchValue != "executives"){
+          let fullHeaderText = $("div.main_content span.area:eq(" + index + ") > h1").text();
+          console.log(fullHeaderText);
+          fullHeaderText = fullHeaderText.split(" ");
+          fullHeaderText.shift();
+          fullHeaderText.shift();
+          fullHeaderText = fullHeaderText.join(" ");
+          searchValue = fullHeaderText.toLowerCase();
+        }
+        if(searchValue.search(searchQuery) == -1){
+          $(this).attr("style","display: none;");
+        }else{
+          $(this).removeAttr("style");
+        }
+      });
+    });
   }
 });
 function _politiciansPage_updateSortPoliticians(value){

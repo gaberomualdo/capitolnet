@@ -15,10 +15,13 @@ div.box_list_item div.row span {
   display: block;
   float: none;
 }
+div.main_content > h1 {
+  display: block;
+  clear: both;
+}
 div.top_area {
   text-align: left;
 }
-
 div.top_area div.sort_section {
   float: left;
   margin-bottom: 3rem;
@@ -29,7 +32,7 @@ div.top_area div.sort_section h1 {
   font-size: 2.4rem;
   float: left;
   margin: 0;
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 div.top_area div.sort_select_container {
   width: 30rem;
@@ -44,5 +47,19 @@ div.top_area div.sort_select_container li {
   margin: 0;
 }
 div.top_area div.sort_select_container a {
-  padding: 7.5px 40px !important;
+  padding: 7.5px 17.5px !important;
+}
+div.top_area div.search_section {
+  float: right;
+}
+div.top_area div.search_section input {
+  height: calc(30px + 2.4rem);
+  padding: 0 calc(10px + 0.45rem);
+  border-radius: 0;
+  transition: width 0.25s;
+  width: 20rem;
+}
+div.top_area div.search_section input:focus {
+  width: 30rem;
+  border-color: var(--color-red);
 }
