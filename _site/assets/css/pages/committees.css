@@ -24,6 +24,6 @@ div.main_content > h1 {
   clear: both;
   background-image: url(../../img/down_icon.png);
   background-size: 3.25rem;
-  background-position: center right;
+  background-position: right 0.625rem;
   background-repeat: no-repeat;
 }
