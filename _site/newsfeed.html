@@ -28,7 +28,7 @@
 <nav>
   <div class="logo">
     <a href="/capitolnet/"><img src="/capitolnet/assets/img/main_logo.png" alt="Capitol Net Logo">
-<h1 style="color:var(--color-red);">capitol<span style="color:var(--color-blue);">net</span></h1>
+<h1 style="color:var(--color-red);margin:0;">capitol<span style="color:var(--color-blue);">net</span></h1>
 </a>
   </div>
   <div class="links">
@@ -90,7 +90,7 @@
   <div class="row">
     <div class="logo">
       <a href="/capitolnet/"><img src="/capitolnet/assets/img/main_logo.png" alt="Capitol Net Logo">
-<h1 style="color:var(--color-red);">capitol<span style="color:var(--color-blue);">net</span></h1>
+<h1 style="color:var(--color-red);margin:0;">capitol<span style="color:var(--color-blue);">net</span></h1>
 </a>
     </div>
     <!--<div class="socialLinks">
@@ -130,6 +130,15 @@ search_list.pop();
 $(function(){
   _search_searchInputShowResults();
   _slideshow_slideshowEvaluateDisabledButtons();
+});
+
+$(".main_content h1").on("click",function(){
+  $("div.box_item_list." + $(this).attr("class")).slideToggle(500,"easeInOutExpo");
+  if($(this).attr("style")){
+    $(this).removeAttr("style");
+  }else{
+    $(this).attr("style","background-image: url(assets/img/up_icon.png);");
+  }
 });
 
 var _politicians_featuredPoliticians = [0,253,469,87,35,238,207,261,158,223,21];

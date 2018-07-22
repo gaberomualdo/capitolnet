@@ -1,11 +1,5 @@
 @import url("box_item_list.css");
 
-div.box_list_item {
-  margin: 2rem;
-  text-align: left;
-  display: block;
-  float: left;
-}
 div.box_list_item a.top_image {
   height: 35rem;
 }
