@@ -117,8 +117,35 @@ search_list.pop();
 
 $(function(){
   _search_searchInputShowResults();
-  _slideshow_slideshowEvaluateDisabledButtons();
+  if(_home_page){
+    _slideshow_slideshowEvaluateDisabledButtons();
+  }
+  if(_politicians_page){
+    switch(getQueryVariable("s")){
+      case "state":
+        $(".sort_select option.state").attr("selected","true");
+        break;
+      case "party":
+        $(".sort_select option.party").attr("selected","true");
+        break;
+      case "type":
+        $(".sort_select option.chamber").attr("selected","true");
+    }
+    $('.sort_select').awselect();
+  }
 });
+function _politiciansPage_updateSortPoliticians(value){
+  switch(value){
+    case "state":
+      window.location.href = site_baseurl + "/politicians.html?s=state";
+      break;
+    case "party":
+      window.location.href = site_baseurl + "/politicians.html?s=party";
+      break;
+    case "chamber":
+      window.location.href = site_baseurl + "/politicians.html?s=type";
+  }
+}
 
 function _updateMainContentPageDropdowns(h1){
   $("div.box_item_list." + $(h1).attr("class")).slideToggle(500,"easeInOutExpo");

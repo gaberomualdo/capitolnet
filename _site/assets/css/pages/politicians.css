@@ -1,4 +1,5 @@
 @import url("box_item_list.css");
+@import url("../vendor/awesomeselect/awselect.min.css");
 
 div.box_list_item a.top_image {
   height: 35rem;
@@ -13,4 +14,35 @@ div.box_list_item a.top_image {
 div.box_list_item div.row span {
   display: block;
   float: none;
+}
+div.top_area {
+  text-align: left;
+}
+
+div.top_area div.sort_section {
+  float: left;
+  margin-bottom: 3rem;
+}
+div.top_area div.sort_section h1 {
+  height: calc(30px + 2.4rem);
+  line-height: calc(30px + 2.7rem);
+  font-size: 2.4rem;
+  float: left;
+  margin: 0;
+  padding-right: 3rem;
+}
+div.top_area div.sort_select_container {
+  width: 30rem;
+  display: block;
+  float: left;
+}
+div.top_area div.sort_select_container * {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+div.top_area div.sort_select_container li {
+  margin: 0;
+}
+div.top_area div.sort_select_container a {
+  padding: 7.5px 40px !important;
 }

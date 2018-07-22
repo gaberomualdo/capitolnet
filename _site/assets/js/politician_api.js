@@ -57,7 +57,7 @@ function _politicians_getPoliticianData(item,index){
     type: possibleTypes[1][possibleTypes[0].indexOf(item.terms[item.terms.length - 1].type)],
     state: possibleStates[0][possibleStates[1].indexOf(item.terms[item.terms.length - 1].state)],
     party: item.terms[item.terms.length - 1].party,
-    image: "https://theunitedstates.io/images/congress/original/" + item.id.bioguide +  ".jpg",
+    image: "https://theunitedstates.io/images/congress/225x275/" + item.id.bioguide +  ".jpg",
     office: item.terms[item.terms.length - 1].office,
     phone: item.terms[item.terms.length - 1].phone,
     website: item.terms[item.terms.length - 1].url,

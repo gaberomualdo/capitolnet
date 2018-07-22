@@ -1,1 +1,5 @@
 @import url("box_item_list.css");
+
+div.main_content > h1 {
+  background-image: none !important;
+}

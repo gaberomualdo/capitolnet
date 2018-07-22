@@ -36,14 +36,14 @@ function _politicians_requestsCompletedFunc(){
   }
   if(_politicians_page){
     if(getQueryVariable("s") == "type" || getQueryVariable("s") == false){
-      $(".main_content").html('<h1 class="executives" onclick="_updateMainContentPageDropdowns(this);">Executives</h1><hr><div class="box_item_list executives"></div><h1 class="senate" onclick="_updateMainContentPageDropdowns(this);">Senators</h1><hr><div class="box_item_list senate"></div><h1 class="house" onclick="_updateMainContentPageDropdowns(this);">Representatives</h1><hr><div class="box_item_list house"></div>');
+      $(".main_content").append('<h1 class="executives" onclick="_updateMainContentPageDropdowns(this);">Executives</h1><hr><div class="box_item_list executives"></div><h1 class="senate" onclick="_updateMainContentPageDropdowns(this);">Senators</h1><hr><div class="box_item_list senate"></div><h1 class="house" onclick="_updateMainContentPageDropdowns(this);">Representatives</h1><hr><div class="box_item_list house"></div>');
     }else if(getQueryVariable("s") == "state"){
       $(".main_content").append('<h1 class="executives" onclick="_updateMainContentPageDropdowns(this);">Executives</h1><hr><div class="box_item_list executives"></div>');
       _politicians_possibleStates[0].forEach(function(item,index){
         $(".main_content").append('<h1 class="' + _politicians_possibleStates[1][index] + '" onclick="_updateMainContentPageDropdowns(this);">Legislators from ' + item + '</h1><hr><div class="box_item_list ' + _politicians_possibleStates[1][index] + '"></div>');
       });
     }else if(getQueryVariable("s") == "party"){
-      $(".main_content").html('<h1 class="republican" onclick="_updateMainContentPageDropdowns(this);">Republican Executives and Legislators</h1><hr><div class="box_item_list republican"></div><h1 class="democrat" onclick="_updateMainContentPageDropdowns(this);">Democratic Executives and Legislators</h1><hr><div class="box_item_list democrat"></div><h1 class="independent" onclick="_updateMainContentPageDropdowns(this);">Independent Executives and Legislators</h1><hr><div class="box_item_list independent"></div>');
+      $(".main_content").append('<h1 class="republican" onclick="_updateMainContentPageDropdowns(this);">Republican Executives and Legislators</h1><hr><div class="box_item_list republican"></div><h1 class="democrat" onclick="_updateMainContentPageDropdowns(this);">Democratic Executives and Legislators</h1><hr><div class="box_item_list democrat"></div><h1 class="independent" onclick="_updateMainContentPageDropdowns(this);">Independent Executives and Legislators</h1><hr><div class="box_item_list independent"></div>');
     }
     _politicians_allPoliticians.forEach(function(item,index){
       const politicianInfo = _politicians_getPoliticianData(item,index);
@@ -64,7 +64,6 @@ function _politicians_requestsCompletedFunc(){
         }
       }else if(getQueryVariable("s") == "state"){
         if(politicianInfo.state){
-          console.log(0);
           $("div.main_content div.box_item_list." + item.terms[item.terms.length - 1].state).append(appendHTML);
         }else{
           $("div.main_content div.box_item_list.executives").append(appendHTML);
