@@ -19,7 +19,11 @@ div.box_item_list {
 div.main_content {
   padding-bottom: 0;
 }
-div.main_content h1 {
+div.main_content > h1 {
   display: block;
   clear: both;
+  background-image: url(../../img/down_icon.png);
+  background-size: 3.25rem;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
