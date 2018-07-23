@@ -43,6 +43,15 @@ div.top_area div.sort_select_container * {
   box-sizing: border-box;
   text-decoration: none;
 }
+.awselect .front_face span {
+  padding: 15px 17.5px !important;
+}
+.awselect .front_face i {
+  right: 17.5px !important;
+}
+.awselect .front_face {
+  padding: 0 !important;
+}
 div.top_area div.sort_select_container li {
   margin: 0;
 }
