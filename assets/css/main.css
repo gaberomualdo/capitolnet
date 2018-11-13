@@ -46,6 +46,8 @@ div.box_list_item div.row h1 {
 div.box_list_item div.row h1 a {
   color: #222;
   text-decoration: none;
+  display: block;
+  white-space: normal;
 }
 div.box_list_item div.row h1 a:hover {
   color: var(--color-red);

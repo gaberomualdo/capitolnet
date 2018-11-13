@@ -3,3 +3,6 @@
 div.main_content > h1 {
   background-image: none !important;
 }
+div.main_content div.box_item_list div.box_list_item div.bottom_section {
+  height: 30rem;
+}

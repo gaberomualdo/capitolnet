@@ -63,6 +63,9 @@ section.politicians div.horizontal_scroll_list div.box_list_item div.row span {
   display: block;
   float: none;
 }
+section.latest_news div.horizontal_scroll_list div.box_list_item div.bottom_section {
+  height: 30rem;
+}
 
 div.featured_slideshow {
   height: calc(100vh - 6.5rem);

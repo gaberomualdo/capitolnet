@@ -1,13 +1,18 @@
-$("div.featured_slideshow svg.featured_slideshow_back_button").on("click",function(){
-  if(!$(this).hasClass("disabled")){
-    _slideshow_slideshowMove(-1);
-  }
-});
-$("div.featured_slideshow svg.featured_slideshow_forward_button").on("click",function(){
-  if(!$(this).hasClass("disabled")){
-    _slideshow_slideshowMove(1);
-  }
-})
+function _slideshow_updateEvents(){
+  $("div.featured_slideshow svg.featured_slideshow_back_button").off("click");
+  $("div.featured_slideshow svg.featured_slideshow_forward_button").off("click");
+  $("div.featured_slideshow svg.featured_slideshow_back_button").on("click",function(){
+    if(!$(this).hasClass("disabled")){
+      _slideshow_slideshowMove(-1);
+    }
+  });
+  $("div.featured_slideshow svg.featured_slideshow_forward_button").on("click",function(){
+    if(!$(this).hasClass("disabled")){
+      _slideshow_slideshowMove(1);
+    }
+  });
+}
+_slideshow_updateEvents()
 function _slideshow_slideshowMove(moveNumber){
   $('div.featured_slideshow').animate({scrollLeft: $('div.featured_slideshow').scrollLeft() + ($(window).width()*moveNumber)}, 600,'easeInOutExpo',function(){
     _slideshow_slideshowEvaluateDisabledButtons();

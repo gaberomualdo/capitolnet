@@ -72,7 +72,7 @@ nav div.links div.searchResults {
 }
 nav div.links div.searchResults a.result,div.links div.searchResults h2.no_results_notice {
   display: block;
-  height: 4rem;
+  min-height: 4rem;
   box-sizing: border-box;
   width: 100%;
   padding: 0.5rem;

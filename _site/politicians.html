@@ -199,6 +199,29 @@ function _updateMainContentPageDropdowns(h1){
 
 var _politicians_featuredPoliticians = [0,253,469,87,35,238,207,261,158,223,21];
 var _committees_featuredCommittees = [6,9,16,18,29,35];
+
+(function(){
+  function _requestAPI(url, func){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        func(this.responseText);
+      }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  }
+  _requestAPI("https://newsapi.org/v2/top-headlines?sources=politico,the-hill&apiKey=377facbb80c140388ec9cdb16a7f7ee0", function(response){
+    let articles = JSON.parse(response).articles;
+    articles.forEach(function(article){
+      search_list.push({
+        title: article.title,
+        type: "news",
+        link: article.url
+      });
+    });
+  });
+})();
 </script>
 <script src="/capitolnet/assets/js/search.js"></script>
 <script src="/capitolnet/assets/js/politician_api_functions.js"></script>
